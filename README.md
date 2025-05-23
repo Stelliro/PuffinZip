@@ -1,6 +1,6 @@
 # PuffinZip - LZMA Compression Utility
 
-> **Note from the Developer (Stelliro):**
+> **Note from Publisher:**
 > This application is currently in an active testing and development phase and may not always work as intended. I am sharing this project as a learning experience and am far from a professional coder, with my skills primarily in understanding and simple editing of code rather than writing complex systems from scratch.
 > 
 > **Intended Use:** PuffinZip is primarily designed for compressing/decompressing files or folders under 100MB.
