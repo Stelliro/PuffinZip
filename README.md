@@ -2,8 +2,7 @@
 
 PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm, offering high compression ratios. It's designed with a clean, dark-mode interface.
 
-![PuffinZip Screenshot](placeholder.png) 
-*(Suggestion: Add a screenshot of your application here named `placeholder.png` or similar, then update the link. You can drag-and-drop images into GitHub issues/PRs/wikis to get a Markdown link.)*
+![PuffinZip Screenshot](PuffinZip.png)
 
 ## Features
 
@@ -20,7 +19,7 @@ PuffinZip is a simple, user-friendly graphical application for compressing and d
 
 ## Download & Installation (for Users)
 
-1.  Go to the [**Releases Page**](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME/releases) of this repository. 
+1.  Go to the [**Releases Page**](https://github.com/Stelliro/PuffinZip/releases/tag/V1.0) of this repository. 
     *(Please update this link to your actual GitHub repository's releases page!)*
 2.  Download the latest `PuffinZip.exe` (or `PuffinZip_vX.Y.Z.exe`) file.
 3.  Place the `.exe` file in a folder of your choice.
