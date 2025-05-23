@@ -94,7 +94,7 @@ You can create a standalone executable using PyInstaller:
 
 ## Credits
 
-*   **Initial Core Implementation and Iterative Development:** Gemini 2.5
+*   **Initial Core Implementation and Development:** Gemini 2.5
 *   **Concept and Direction:** Stelliro
 
 ## Contributing
