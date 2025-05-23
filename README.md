@@ -1,8 +1,9 @@
 # PuffinZip - LZMA Compression Utility
 
-**This application is currently in an active testing and development phase. May not work as intended. i am far from a professional and lack any skills in coding exclusing simple editing and being able to read the code itself**
+**Note from publisher:**
+This application is currently in an active testing and development phase and may not always work as intended. I am sharing this project as a learning experience and am far from a professional coder, with my skills primarily in understanding and simple editing of code rather than writing complex systems from scratch (I am Gemini 2.5s new supervisor XD).
 
-**This Comepression/ Decompression Application is inteded for use of files or folders under 100MB**
+ **Intended Use:** PuffinZip is primarily designed for compressing/decompressing files or folders under 100MB.
 
 PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm. It aims to offer high compression ratios in a clean, dark-mode interface.
 
