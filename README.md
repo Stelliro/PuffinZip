@@ -1,12 +1,14 @@
 # PuffinZip - LZMA Compression Utility
 
-PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm, offering high compression ratios. It's designed with a clean, dark-mode interface.
+PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm. **This application is currently in an active testing and development phase.** It aims to offer high compression ratios in a clean, dark-mode interface.
+
+Initial tests on specific file types have shown that PuffinZip, using Python's LZMA implementation at preset 9, can achieve slightly higher compression rates than 7-Zip's LZMA/LZMA2 on its "Ultra" settings for those same files. However, compression performance can vary widely depending on file content and further comparative testing is encouraged.
 
 ![PuffinZip Screenshot](PuffinZip.png)
 
 ## Features
 
-*   **High Compression:** Uses LZMA (preset 9) for maximal file size reduction.
+*   **High Compression:** Employs LZMA (preset 9 via Python's `lzma` module) for maximal file size reduction.
 *   **User-Friendly GUI:** Simple tabbed interface built with `customtkinter`.
     *   Compress Tab: Select file, choose output name (auto-suggested), and compress.
     *   Decompress Tab: Select `.lzma` file, choose output name (auto-suggested), and decompress.
@@ -20,10 +22,11 @@ PuffinZip is a simple, user-friendly graphical application for compressing and d
 ## Download & Installation (for Users)
 
 1.  Go to the [**Releases Page**](https://github.com/Stelliro/PuffinZip/releases/tag/V1.0) of this repository. 
-    *(Please update this link to your actual GitHub repository's releases page!)*
-2.  Download the latest `PuffinZip.exe` (or `PuffinZip_vX.Y.Z.exe`) file.
+    *(Please ensure this link points to your actual GitHub repository's releases page!)*
+2.  Download the latest `PuffinZip.exe` (or `PuffinZip_vX.Y.Z.exe`) file from the "Assets" section.
 3.  Place the `.exe` file in a folder of your choice.
 4.  Double-click `PuffinZip.exe` to run the application. No installation is required.
+    **Note:** As this is an early release, your browser or Windows SmartScreen might show warnings. You may need to choose "Keep" or "Run anyway."
 
 ## How to Use
 
@@ -41,13 +44,13 @@ PuffinZip is a simple, user-friendly graphical application for compressing and d
     *   The original filename will be suggested as the output. You can change it.
     *   Click the "Decompress" button.
 
-    **Note on Performance:** PuffinZip uses LZMA's highest compression setting (preset 9). This provides excellent compression ratios but can be time-consuming, especially for larger files (even those under 100MB). The UI will remain responsive (progress bar animating) during these operations.
+    **Note on Performance:** PuffinZip uses LZMA's highest compression setting (preset 9). This generally provides excellent compression ratios but can be time-consuming, especially for larger files (even those under 100MB). The UI will remain responsive (progress bar animating) during these operations.
 
 ---
 
 ## For Developers / Running from Source
 
-If you prefer to run PuffinZip directly from the Python source code or contribute to its development:
+If you prefer to run PuffinZip directly from the Python source code, review its development, or contribute:
 
 ### Requirements
 
@@ -58,11 +61,17 @@ If you prefer to run PuffinZip directly from the Python source code or contribut
 
 1.  Clone the repository or download the source code.
 2.  Ensure you have Python 3.6+ installed.
-3.  Install the `customtkinter` library:
+3.  It is highly recommended to set up a virtual environment:
+    ```bash
+    python -m venv .venv
+    # On Windows: .\.venv\Scripts\activate
+    # On macOS/Linux: source .venv/bin/activate
+    ```
+4.  Install the required `customtkinter` library:
     ```bash
     pip install customtkinter
     ```
-4.  Navigate to the source code directory and run the script:
+5.  Navigate to the source code directory and run the script:
     ```bash
     python PuffinZip.py
     ```
@@ -70,22 +79,22 @@ If you prefer to run PuffinZip directly from the Python source code or contribut
 
 ### Building an Executable from Source
 
-You can create a standalone executable using PyInstaller:
+You can create a standalone executable using PyInstaller (preferably within your activated virtual environment):
 
 1.  Install PyInstaller: `pip install pyinstaller`
 2.  Navigate to the script's directory and run (from your terminal/command prompt):
     ```bash
-    python -m PyInstaller --onefile --windowed PuffinZip.py
+    python -m PyInstaller --onefile --windowed --icon="your_icon.ico" PuffinZip.py
     ```
-    *(Or `py -m PyInstaller ...` if you use the `py` launcher)*
+    *(Replace `your_icon.ico` with the path to your icon file. Or `py -m PyInstaller ...` if you use the `py` launcher)*
     
     **Note for `customtkinter` Theming:** For `customtkinter` themes to work correctly in the compiled EXE, PyInstaller might need help finding the theme assets. You might need to use the `--add-data` flag. For example:
     
-    First, find your `customtkinter` assets path (e.g., by running `import customtkinter, os; print(os.path.join(os.path.dirname(customtkinter.__file__), "assets"))` in Python).
+    First, find your `customtkinter` assets path (e.g., by running `python -c "import customtkinter, os; print(os.path.join(os.path.dirname(customtkinter.__file__), 'assets'))"` in Python within the active venv).
     
     Then, adjust the PyInstaller command:
     ```bash
-    python -m PyInstaller --onefile --windowed --add-data "FULL_PATH_TO_CUSTOMTKINTER_ASSETS;customtkinter/assets" PuffinZip.py
+    python -m PyInstaller --onefile --windowed --icon="your_icon.ico" --add-data "FULL_PATH_TO_CUSTOMTKINTER_ASSETS;customtkinter/assets" PuffinZip.py
     ```
     Replace `FULL_PATH_TO_CUSTOMTKINTER_ASSETS` with the actual path you found. The semicolon (`;`) is for Windows; use a colon (`:`) for Linux/macOS.
 
@@ -93,11 +102,11 @@ You can create a standalone executable using PyInstaller:
 
 ## Credits
 
-*   **Initial Core Implementation and Development:** Gemini 2.5
 *   **Concept and Direction:** Stelliro
+*   **Core Implementation and Iterative Development:** AI Assistant (Gemini)
 
 ## Contributing
 
-Found a bug or have an idea for an improvement? Feel free to:
-*   Open an issue.
-*   Fork the repository, make your changes, and submit a pull request.
+PuffinZip is in active development, and contributions are welcome!
+*   **Feedback:** If you encounter any bugs or have suggestions for improvements, especially regarding compression performance on different file types, please open an issue.
+*   **Pull Requests:** Feel free to fork the repository, make your changes, and submit a pull request.
