@@ -1,13 +1,13 @@
 # PuffinZip - LZMA Compression Utility
 
-**Note from publisher:**
-This application is currently in an active testing and development phase and may not always work as intended. I am sharing this project as a learning experience and am far from a professional coder, with my skills primarily in understanding and simple editing of code rather than writing complex systems from scratch (I am Gemini 2.5s new supervisor XD).
+> **Note from the Developer (Stelliro):**
+> This application is currently in an active testing and development phase and may not always work as intended. I am sharing this project as a learning experience and am far from a professional coder, with my skills primarily in understanding and simple editing of code rather than writing complex systems from scratch.
+> 
+> **Intended Use:** PuffinZip is primarily designed for compressing/decompressing files or folders under 100MB.
 
- **Intended Use:** PuffinZip is primarily designed for compressing/decompressing files or folders under 100MB.
+PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm. It's designed with a clean, dark-mode interface.
 
-PuffinZip is a simple, user-friendly graphical application for compressing and decompressing files using the powerful LZMA algorithm. It aims to offer high compression ratios in a clean, dark-mode interface.
-
-Initial tests on specific file types have shown that PuffinZip, using Python's LZMA implementation at preset 9, can achieve slightly higher compression rates than 7-Zip's LZMA/LZMA2 on its "Ultra" settings for those same files. However, compression performance can vary widely depending on file content and further comparative testing is encouraged.
+PuffinZip utilizes Python's built-in `lzma` module at its highest setting (preset 9) to achieve strong compression. While it aims for significant file size reduction, dedicated and highly optimized compression utilities like 7-Zip (which employs its own finely-tuned LZMA/LZMA2 parameters and container formats) may still achieve marginally better compression ratios on some files. PuffinZip offers a straightforward, graphical approach to LZMA compression. Compression performance can vary based on file content.
 
 ![PuffinZip Screenshot](PuffinZip.png)
 
@@ -49,7 +49,7 @@ Initial tests on specific file types have shown that PuffinZip, using Python's L
     *   The original filename will be suggested as the output. You can change it.
     *   Click the "Decompress" button.
 
-    **Note on Performance:** PuffinZip uses LZMA's highest compression setting (preset 9). This generally provides excellent compression ratios but can be time-consuming, especially for larger files (even those under 100MB). The UI will remain responsive (progress bar animating) during these operations.
+    **Note on Performance:** PuffinZip uses LZMA's highest compression setting (preset 9). This generally provides good compression ratios but can be time-consuming, especially for larger files (even those under 100MB). The UI will remain responsive (progress bar animating) during these operations.
 
 ---
 
